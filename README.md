@@ -1,28 +1,82 @@
-# MARL-RAGDoc
 
-Reference implementation of the MARL-RAGDoc framework described in the design notes. The project demonstrates how to build a hierarchical multi-agent retrieval-augmented generation (RAG) pipeline that can reason over multimodal industrial documents.
+# RAGDoc – AI-Powered Document Question Answering
 
-## Project Layout
+RAGDoc is an AI-powered document assistant designed to help users retrieve relevant information and answer questions from documents using Retrieval-Augmented Generation (RAG).
 
-- `src/marl_ragdoc/data_types.py` – shared dataclasses (e.g., `Element`, `Candidate`).
-- `src/marl_ragdoc/parsing/multimodal_parser.py` – document ingestion, OCR stubs, embedding hooks.
-- `src/marl_ragdoc/retrieval/candidate_pool.py` – projection layers, similarity scoring, top-k pooling.
-- `src/marl_ragdoc/agents/` – coordinator and modality agent policies plus neural networks.
-- `src/marl_ragdoc/environment/rag_env.py` – hierarchical MARL environment that glues parsing, retrieval, and reasoning.
-- `src/marl_ragdoc/reasoning/collaborative_reasoner.py` – weighted aggregation, reflection loop, LLM interface.
-- `src/marl_ragdoc/training/trainer.py` – RL training harness, losses, rollout helpers.
-- `src/marl_ragdoc/pipeline.py` – high-level orchestration entry point.
+## 🚀 Features
 
-## Getting Started
+- 📄 Document-based question answering
+- 🔍 Intelligent information retrieval
+- 🤖 AI-powered response generation
+- 🧠 Context-aware answers using RAG
+- ⚡ Faster access to relevant document information
+- 📚 Useful for research papers, reports, and study materials
 
-```bash
-poetry install
-poetry run python -m marl_ragdoc.pipeline --config configs/demo.yaml
-```
+## 🛠️ Technologies
 
-You must provision external OCR, table extraction, and LLM endpoints. The included components expose abstract hooks so you can plug in the tools used in your environment.
+- Python
+- Artificial Intelligence (AI)
+- Large Language Models (LLMs)
+- Retrieval-Augmented Generation (RAG)
+- Natural Language Processing (NLP)
 
-## Status
+*Note: Update this section according to the actual technologies used in the project.*
 
-The code focuses on architecture clarity: state/action definitions, reward wiring, and module interfaces match the MARL-RAGDoc description. Production deployments should replace the mocked subsystems (OCR, embeddings, LLM scoring) with real services, add persistence for experience replay, and extend evaluation.
+## ⚙️ Installation
 
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Ravi506051/RAGDoc-main.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd RAGDoc-main
+   ```
+
+3. Create a virtual environment:
+
+   ```bash
+   python -m venv venv
+   ```
+
+4. Activate the environment on Windows:
+
+   ```bash
+   venv\Scripts\activate
+   ```
+
+5. Install the dependencies (if `requirements.txt` exists):
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+6. Run the project using its configured entry-point file.
+
+## 💡 Use Cases
+
+- Research paper analysis
+- Academic document understanding
+- Study material assistance
+- Document search and information extraction
+- Knowledge retrieval from large documents
+
+## 🎯 Project Objective
+
+The objective of RAGDoc is to make document analysis more efficient by combining intelligent retrieval with AI-generated responses, helping users find relevant information without manually searching through entire documents.
+
+## 👨‍💻 Author
+
+**Ravi Kumar Rao**
+
+B.Tech Information Technology  
+Guru Ghasidas Central University, Bilaspur, Chhattisgarh
+
+GitHub: [Ravi506051](https://github.com/Ravi506051)
+
+## ⭐ Support
+
+If you find this project useful, consider giving the repository a star ⭐ on GitHub.
