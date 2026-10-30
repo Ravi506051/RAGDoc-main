@@ -91,3 +91,9 @@ If you find this project useful, consider giving the repository a star ⭐ on Gi
 ## Limitations and Privacy
 
 AI-generated responses can be incomplete or incorrect. Verify important statements against the original document. Only upload documents you are authorized to process, and review where files, embeddings, and conversation history are stored before deploying the application publicly.
+
+## Project Development Notes
+
+Keep image-restoration inference reproducible by recording checkpoint, input preprocessing, padding/tile settings, and dataset split. Compare restored outputs with suitable image-quality metrics where ground truth exists.
+
+For reproducibility, record source versions, environment and dependency versions, configuration, and actual test outputs. Clearly label sample data and illustrative results; never commit secrets or private data.
