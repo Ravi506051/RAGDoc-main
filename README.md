@@ -97,3 +97,9 @@ AI-generated responses can be incomplete or incorrect. Verify important statemen
 Keep image-restoration inference reproducible by recording checkpoint, input preprocessing, padding/tile settings, and dataset split. Compare restored outputs with suitable image-quality metrics where ground truth exists.
 
 For reproducibility, record source versions, environment and dependency versions, configuration, and actual test outputs. Clearly label sample data and illustrative results; never commit secrets or private data.
+
+### Technical Deep Dive
+
+A document QA pipeline should make each stage observable: file validation and parsing, chunk creation with source metadata, embedding generation, vector retrieval, prompt assembly, and grounded answer generation. Store page/section metadata with every chunk so the interface can show where retrieved context came from. Evaluate retrieval relevance separately from answer faithfulness.
+
+Suggested engineering checks: test answerable, partially answerable, and unanswerable questions; rebuild indexes when source documents or embedding settings change; treat document text as untrusted prompt content; and isolate uploaded files and indexes between users.
