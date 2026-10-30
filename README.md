@@ -80,3 +80,14 @@ GitHub: [Ravi506051](https://github.com/Ravi506051)
 ## ⭐ Support
 
 If you find this project useful, consider giving the repository a star ⭐ on GitHub.
+
+## Quality Assurance Checklist
+
+- Test questions whose answers are present, absent, and only partially covered by the source documents.
+- Inspect retrieved passages to verify that answers are grounded in relevant context.
+- Check how the system handles scanned PDFs, tables, long documents, and unsupported file types, if those are in scope for the implementation.
+- Record the model, embedding configuration, chunking strategy, and evaluation examples used for each experiment.
+
+## Limitations and Privacy
+
+AI-generated responses can be incomplete or incorrect. Verify important statements against the original document. Only upload documents you are authorized to process, and review where files, embeddings, and conversation history are stored before deploying the application publicly.
