@@ -111,3 +111,11 @@ Suggested engineering checks: test answerable, partially answerable, and unanswe
 - Record the parser, chunking strategy, embedding model, vector-store configuration, and LLM/provider version.
 - Verify generated answers against original passages, especially for research and academic documents.
 - Upload only documents you are authorized to process and document where files, embeddings, and chat history are stored.
+
+## Document Retrieval and Answer Grounding
+
+- Preserve source filenames, page numbers, and chunk identifiers throughout ingestion and retrieval.
+- Tune chunking and retrieval settings with a fixed set of document questions and expected evidence.
+- Require generated answers to be supported by retrieved passages and expose citations or source references.
+- Handle empty retrieval results explicitly instead of generating unsupported answers.
+- Test scanned pages, tables, multilingual text, and large files; protect uploaded documents and credentials.
