@@ -103,3 +103,11 @@ For reproducibility, record source versions, environment and dependency versions
 A document QA pipeline should make each stage observable: file validation and parsing, chunk creation with source metadata, embedding generation, vector retrieval, prompt assembly, and grounded answer generation. Store page/section metadata with every chunk so the interface can show where retrieved context came from. Evaluate retrieval relevance separately from answer faithfulness.
 
 Suggested engineering checks: test answerable, partially answerable, and unanswerable questions; rebuild indexes when source documents or embedding settings change; treat document text as untrusted prompt content; and isolate uploaded files and indexes between users.
+
+## Retrieval Evaluation and Responsible Document Handling
+
+- Evaluate retrieval and answer generation separately using a fixed set of document-question examples.
+- Test questions with supported, partially supported, and unsupported answers; the system should not invent evidence when context is missing.
+- Record the parser, chunking strategy, embedding model, vector-store configuration, and LLM/provider version.
+- Verify generated answers against original passages, especially for research and academic documents.
+- Upload only documents you are authorized to process and document where files, embeddings, and chat history are stored.
