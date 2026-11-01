@@ -119,3 +119,10 @@ Suggested engineering checks: test answerable, partially answerable, and unanswe
 - Require generated answers to be supported by retrieved passages and expose citations or source references.
 - Handle empty retrieval results explicitly instead of generating unsupported answers.
 - Test scanned pages, tables, multilingual text, and large files; protect uploaded documents and credentials.
+
+## Document QA Quality Checks
+
+- Test retrieval and answer generation independently, including questions with no supporting answer in the source files.
+- Preserve document metadata such as filename and page number so answers can cite their evidence.
+- Check chunking, embedding, and top-k retrieval settings on a small labelled question set.
+- Handle scanned PDFs, empty files, unsupported formats, and conflicting passages explicitly; the assistant should say when evidence is insufficient.
