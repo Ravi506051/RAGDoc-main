@@ -1,128 +1,38 @@
+# RAGDoc — Document Question Answering
 
-# RAGDoc – AI-Powered Document Question Answering
+RAGDoc is a document-assistant project exploring Retrieval-Augmented Generation (RAG) for finding relevant information and answering questions grounded in uploaded or indexed documents.
 
-RAGDoc is an AI-powered document assistant designed to help users retrieve relevant information and answer questions from documents using Retrieval-Augmented Generation (RAG).
+## Core workflow
+1. Load and parse supported documents.
+2. Split extracted text into searchable chunks.
+3. Generate embeddings for the chunks.
+4. Retrieve relevant passages for a question.
+5. Provide retrieved context to a language model.
+6. Return a context-aware response.
 
-## 🚀 Features
+## Technology areas
+Python · Retrieval-Augmented Generation · Embeddings · Large Language Models · NLP
 
-- 📄 Document-based question answering
-- 🔍 Intelligent information retrieval
-- 🤖 AI-powered response generation
-- 🧠 Context-aware answers using RAG
-- ⚡ Faster access to relevant document information
-- 📚 Useful for research papers, reports, and study materials
+Check the dependency files and application source for the exact parser, vector store, model provider and user interface configured in this repository.
 
-## 🛠️ Technologies
+## Getting started
+```bash
+git clone https://github.com/Ravi506051/RAGDoc-main.git
+cd RAGDoc-main
+python -m venv .venv
+# Windows: .venv\\Scripts\\activate
+pip install -r requirements.txt
+```
+Run the entry point documented in the project after configuring any required model credentials.
 
-- Python
-- Artificial Intelligence (AI)
-- Large Language Models (LLMs)
-- Retrieval-Augmented Generation (RAG)
-- Natural Language Processing (NLP)
+## Evaluation
+Measure retrieval relevance separately from answer quality. Test questions with no supporting passage, long documents, duplicate content and malformed files. Prefer answers that cite or identify their supporting source passages.
 
-*Note: Update this section according to the actual technologies used in the project.*
+## Security
+Treat uploaded documents as private data. Validate file types and sizes, isolate document processing and never expose credentials or document contents in logs.
 
-## ⚙️ Installation
+## Future improvements
+Add page-level citations, retrieval benchmarks, configurable chunking, persistent indexing and document-level access controls.
 
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/Ravi506051/RAGDoc-main.git
-   ```
-
-2. Navigate to the project directory:
-
-   ```bash
-   cd RAGDoc-main
-   ```
-
-3. Create a virtual environment:
-
-   ```bash
-   python -m venv venv
-   ```
-
-4. Activate the environment on Windows:
-
-   ```bash
-   venv\Scripts\activate
-   ```
-
-5. Install the dependencies (if `requirements.txt` exists):
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-6. Run the project using its configured entry-point file.
-
-## 💡 Use Cases
-
-- Research paper analysis
-- Academic document understanding
-- Study material assistance
-- Document search and information extraction
-- Knowledge retrieval from large documents
-
-## 🎯 Project Objective
-
-The objective of RAGDoc is to make document analysis more efficient by combining intelligent retrieval with AI-generated responses, helping users find relevant information without manually searching through entire documents.
-
-## 👨‍💻 Author
-
-**Ravi Kumar Rao**
-
-B.Tech Information Technology  
-Guru Ghasidas Central University, Bilaspur, Chhattisgarh
-
-GitHub: [Ravi506051](https://github.com/Ravi506051)
-
-## ⭐ Support
-
-If you find this project useful, consider giving the repository a star ⭐ on GitHub.
-
-## Quality Assurance Checklist
-
-- Test questions whose answers are present, absent, and only partially covered by the source documents.
-- Inspect retrieved passages to verify that answers are grounded in relevant context.
-- Check how the system handles scanned PDFs, tables, long documents, and unsupported file types, if those are in scope for the implementation.
-- Record the model, embedding configuration, chunking strategy, and evaluation examples used for each experiment.
-
-## Limitations and Privacy
-
-AI-generated responses can be incomplete or incorrect. Verify important statements against the original document. Only upload documents you are authorized to process, and review where files, embeddings, and conversation history are stored before deploying the application publicly.
-
-## Project Development Notes
-
-Keep image-restoration inference reproducible by recording checkpoint, input preprocessing, padding/tile settings, and dataset split. Compare restored outputs with suitable image-quality metrics where ground truth exists.
-
-For reproducibility, record source versions, environment and dependency versions, configuration, and actual test outputs. Clearly label sample data and illustrative results; never commit secrets or private data.
-
-### Technical Deep Dive
-
-A document QA pipeline should make each stage observable: file validation and parsing, chunk creation with source metadata, embedding generation, vector retrieval, prompt assembly, and grounded answer generation. Store page/section metadata with every chunk so the interface can show where retrieved context came from. Evaluate retrieval relevance separately from answer faithfulness.
-
-Suggested engineering checks: test answerable, partially answerable, and unanswerable questions; rebuild indexes when source documents or embedding settings change; treat document text as untrusted prompt content; and isolate uploaded files and indexes between users.
-
-## Retrieval Evaluation and Responsible Document Handling
-
-- Evaluate retrieval and answer generation separately using a fixed set of document-question examples.
-- Test questions with supported, partially supported, and unsupported answers; the system should not invent evidence when context is missing.
-- Record the parser, chunking strategy, embedding model, vector-store configuration, and LLM/provider version.
-- Verify generated answers against original passages, especially for research and academic documents.
-- Upload only documents you are authorized to process and document where files, embeddings, and chat history are stored.
-
-## Document Retrieval and Answer Grounding
-
-- Preserve source filenames, page numbers, and chunk identifiers throughout ingestion and retrieval.
-- Tune chunking and retrieval settings with a fixed set of document questions and expected evidence.
-- Require generated answers to be supported by retrieved passages and expose citations or source references.
-- Handle empty retrieval results explicitly instead of generating unsupported answers.
-- Test scanned pages, tables, multilingual text, and large files; protect uploaded documents and credentials.
-
-## Document QA Quality Checks
-
-- Test retrieval and answer generation independently, including questions with no supporting answer in the source files.
-- Preserve document metadata such as filename and page number so answers can cite their evidence.
-- Check chunking, embedding, and top-k retrieval settings on a small labelled question set.
-- Handle scanned PDFs, empty files, unsupported formats, and conflicting passages explicitly; the assistant should say when evidence is insufficient.
+## Maintainer
+**Ravi Kumar Rao** · [GitHub](https://github.com/Ravi506051)
