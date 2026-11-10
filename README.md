@@ -55,3 +55,10 @@ This project is part of my hands-on learning portfolio. The repository documents
 - Evaluate retrieval relevance with representative questions before assessing generated answers.
 - Test unsupported questions and empty retrieval results; the assistant should say when the documents do not provide an answer.
 - Treat document content as untrusted data and keep it separate from system-level instructions.
+
+## Operational Checklist
+
+- Validate supported file formats and provide clear feedback when parsing fails.
+- Preserve source metadata through indexing so users can verify retrieved passages.
+- Test document updates and deletions to ensure stale chunks are not returned.
+- Measure retrieval quality with representative questions and document the limits of the configured language model.
