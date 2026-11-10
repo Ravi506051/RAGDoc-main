@@ -48,3 +48,10 @@ Add page-level citations, retrieval benchmarks, configurable chunking, persisten
 ## Portfolio Context
 
 This project is part of my hands-on learning portfolio. The repository documents the workflow and implementation; results should be reproduced from the included code and data before being used in reports or professional claims.
+
+## Retrieval Evaluation and Source Transparency
+
+- Preserve document names and page or section metadata so retrieved evidence can be traced.
+- Evaluate retrieval relevance with representative questions before assessing generated answers.
+- Test unsupported questions and empty retrieval results; the assistant should say when the documents do not provide an answer.
+- Treat document content as untrusted data and keep it separate from system-level instructions.
